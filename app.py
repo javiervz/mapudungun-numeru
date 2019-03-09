@@ -179,10 +179,15 @@ def map_esp(number):
     [Input(component_id='my-id', component_property='value')]
 )
 def update_output_div(input_value):
-    if int(input_value) < 1 or int(input_value) > 9999:
+    try:
+        input_value=int(input_value)
+    except ValueError:
+        return 'Ingresa un número :), no otra cosa'
+
+    if input_value < 1 or input_value > 9999:
         return 'Aún no podemos traducir números en ese rango :('
     else:
-        return 'En mapudungun, el número "{}" se dice'.format(int(input_value))+map_esp(int(input_value))
+        return 'En mapudungun, el número "{}" se dice'.format(input_value)+map_esp(input_value)
 
 
 if __name__ == '__main__':
