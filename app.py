@@ -12,7 +12,7 @@ server = app.server
 
 app.layout = html.Div([
     html.Label('Ingresa un número entre 1 y 9999',style={'color': 'black', 'fontSize': 16, 'font-weight': 'bold'}),
-    dcc.Input(id='my-id', value='', type='text'),
+    dcc.Input(id='my-id', value=1, type='text'),
     html.Div(id='my-div'),
 
 ])
