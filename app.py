@@ -180,7 +180,7 @@ def map_esp(number):
 )
 def update_output_div(input_value):
     if int(input_value) < 1 or int(input_value) > 9999:
-        return 'Aún no podemos traductir números en ese rango :('
+        return 'Aún no podemos traducir números en ese rango :('
     else:
         return 'En mapudungun, el número "{}" se dice'.format(int(input_value))+map_esp(int(input_value))
 
