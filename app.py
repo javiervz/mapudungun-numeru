@@ -182,10 +182,10 @@ def update_output_div(input_value):
     try:
         input_value=int(input_value)
     except ValueError:
-        return 'Ingresa un número :), no otra cosa'
+        return 'Solo traduzco números :)'
 
     if input_value < 1 or input_value > 9999:
-        return 'Solo traduzco números :)'
+        return 'Aún no podemos traducir números en ese rango :('
     else:
         return 'En mapudungun, el número "{}" se dice'.format(input_value)+map_esp(input_value)
 
