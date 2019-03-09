@@ -14,14 +14,14 @@ app.layout = html.Div([
     html.Label('Ingresa un número entre 1 y 9999',style={'color': 'black', 'fontSize': 16, 'font-weight': 'bold'}),
     dcc.Input(id='my-id', value='', type='text'),
     html.Div(id='my-div'),
-    
+
 ])
 
 numbers_1_9={'kiñe':1,'epu':2,'küla':3,'meli':4,'kechu':5,'kayu':6,'regle':7,'pura':8,'aylla':9}
 numbers_10_1000={'mari':10,'pataka':100,'warangka':1000}
 
 def numbers_map_decimal(string):
-    
+
     string=word_tokenize(string)
     n=len(string)
     if n==1:
@@ -75,7 +75,7 @@ def decimal_to_map_99(number):
             return words_1_10[components[0]]+' '+'mari'
         else:
             return words_1_10[components[0]]+' '+'mari'+' '+words_1_10[components[1]]
-        
+
 def decimal_to_map_999(number):
     hundred=int(str(number)[0])
     if number<100:
@@ -89,7 +89,7 @@ def decimal_to_map_999(number):
             return 'pataka'+' '+decimal_to_map_99(int(str(number)[1:]))
         else:
             return words_1_10[hundred]+' '+'pataka'+' '+decimal_to_map_99(int(str(number)[1:]))
-        
+
 def decimal_to_map_9999(number):
     thousand=int(str(number)[0])
     if number<1000:
@@ -128,7 +128,7 @@ def decimal_to_map_99_esp(number):
             return words_20_90_esp[components[0]]+words_1_10_esp[components[1]]
         if components[1]!=0 and number>=30:
             return words_20_90_esp[components[0]]+' '+'y'+' '+words_1_10_esp[components[1]]
-       
+
 def decimal_to_map_999_esp(number):
     hundred=int(str(number)[0])
     if number<100:
@@ -143,19 +143,19 @@ def decimal_to_map_999_esp(number):
         if hundred==9:
             return 'novecientos'
         else:
-            return words_1_10_esp[hundred]+'cientos'  
+            return words_1_10_esp[hundred]+'cientos'
     else:
         if hundred==1:
             return 'ciento'+' '+decimal_to_map_99_esp(int(str(number)[1:]))
         else:
             if hundred==5:
-                return 'quinientos'+' '+decimal_to_map_99_esp(int(str(number)[1:])) 
+                return 'quinientos'+' '+decimal_to_map_99_esp(int(str(number)[1:]))
             if hundred==7:
-                return 'setecientos'+' '+decimal_to_map_99_esp(int(str(number)[1:])) 
+                return 'setecientos'+' '+decimal_to_map_99_esp(int(str(number)[1:]))
             if hundred==9:
-                return 'novecientos'+' '+decimal_to_map_99_esp(int(str(number)[1:])) 
+                return 'novecientos'+' '+decimal_to_map_99_esp(int(str(number)[1:]))
             else:
-                return words_1_10_esp[hundred]+'cientos'+' '+decimal_to_map_99_esp(int(str(number)[1:]))                 
+                return words_1_10_esp[hundred]+'cientos'+' '+decimal_to_map_99_esp(int(str(number)[1:]))
 
 def decimal_to_map_9999_esp(number):
     thousand=int(str(number)[0])
@@ -164,13 +164,13 @@ def decimal_to_map_9999_esp(number):
     elif number==1000:
         return 'mil'
     elif number%1000==0 and number>1000 and number<10000:
-        return words_1_10_esp[thousand]+' '+'mil'  
+        return words_1_10_esp[thousand]+' '+'mil'
     else:
         if thousand==1:
             return 'mil'+' '+decimal_to_map_999_esp(int(str(number)[1:]))
         else:
             return words_1_10_esp[thousand]+' '+'mil'+' '+decimal_to_map_999_esp(int(str(number)[1:]))
-        
+
 def map_esp(number):
     return ' '+decimal_to_map_9999(number)#+' | '+decimal_to_map_9999_esp(number)
 
@@ -179,14 +179,11 @@ def map_esp(number):
     [Input(component_id='my-id', component_property='value')]
 )
 def update_output_div(input_value):
-    return 'En mapudungun, el número "{}" se dice'.format(int(input_value))+map_esp(int(input_value))
+    if int(input value) < 1 or int(input_value) > 9999:
+        return 'Ingresa un número entre 1 y 9999'
+    else:
+        return 'En mapudungun, el número "{}" se dice'.format(int(input_value))+map_esp(int(input_value))
 
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-
-
-
-
-
