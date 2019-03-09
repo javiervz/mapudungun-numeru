@@ -172,7 +172,7 @@ def decimal_to_map_9999_esp(number):
             return words_1_10_esp[thousand]+' '+'mil'+' '+decimal_to_map_999_esp(int(str(number)[1:]))
 
 def map_esp(number):
-    return '\n '+decimal_to_map_9999(number)#+' | '+decimal_to_map_9999_esp(number)
+    return ' '+decimal_to_map_9999(number)#+' | '+decimal_to_map_9999_esp(number)
 
 @app.callback(
     Output(component_id='my-div', component_property='children'),
