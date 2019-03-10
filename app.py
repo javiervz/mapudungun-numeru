@@ -11,7 +11,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
-    html.Label('Dime un número y te enseñaré cómo se dice en mapudungun',style={'color': 'black', 'fontSize': 16, 'font-weight': 'bold'}),
+    html.Label('Dime un número entre 1 y 9999 \ny te enseñaré cómo se dice en mapudungun',style={'color': 'black', 'fontSize': 16, 'font-weight': 'bold'}),
     dcc.Input(id='my-id', value=1, type='text'),
     html.Div(id='my-div'),
 
