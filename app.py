@@ -14,8 +14,8 @@ app.layout = html.Div([
     html.Label('Dime un número entre 1 y 9999 \ny te enseñaré cómo se dice en mapudungun',style={'textAlign': 'center','color': 'black', 'fontSize': 16, 'font-weight': 'bold'}),
     html.Label('Dime un número entre 1 y 9999 \ny te enseñaré cómo se dice en mapudungun',style={'textAlign': 'center','color': 'black', 'fontSize': 16, 'font-weight': 'bold'}),
 
-    dcc.Input(id='my-id', value=1, type='text'),
-    html.Div(id='my-div'),
+    dcc.Input(id='my-id', value=1, type='text',style={'textAlign': 'center'}),
+    html.Div(id='my-div',style={'textAlign': 'center','color': 'black', 'fontSize': 16, 'font-weight': 'bold'}),
 
 ])
 
