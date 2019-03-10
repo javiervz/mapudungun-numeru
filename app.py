@@ -16,6 +16,7 @@ app.layout = html.Div([
 
     dcc.Input(id='my-id', value=1, type='text'),
     html.Div(id='my-div',style={'color': 'black', 'fontSize': 16}),#'font-weight': 'bold'
+    html.H3('Loading State Example')
 
 ])
 
