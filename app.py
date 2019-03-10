@@ -16,7 +16,7 @@ app.layout = html.Div([
 
     dcc.Input(id='my-id', value=1, type='text'),
     html.Div(id='my-div',style={'color': 'black', 'fontSize': 16}),#'font-weight': 'bold'
-    html.H1('no se que poner :S')
+    html.H3('Si quieres cooperar con esta iniciativa escríbeme a jxvera@gmail.com',style={'fontSize': 14})
 
 ])
 
