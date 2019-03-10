@@ -189,7 +189,7 @@ def update_output_div(input_value):
     if input_value < 1 or input_value > 9999:
         return 'Aún no podemos traducir números en ese rango :('
     else:
-        return 'En mapudungun, el número "{}" se dice'.format(input_value)+map_esp(input_value)
+        return 'En mapudungun, el número "{}" se dice'.format(input_value)+'"'+map_esp(input_value)
 
 
 if __name__ == '__main__':
