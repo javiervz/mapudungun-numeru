@@ -1,2 +1,2 @@
 # mapudungun-numeru
-[app](https://mapudungun-numeru.herokuapp.com/)
+[app link](https://mapudungun-numeru.herokuapp.com/)
