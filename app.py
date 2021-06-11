@@ -11,8 +11,8 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
-    html.Label('Dime un número entre 1 y 9999',style={'color': 'black', 'fontSize': 20}),
-    html.Label('¿Cómo se dice en mapuzugun?',style={'color': '#8B008B', 'fontSize': 20, 'font-weight': 'bold'}),
+    html.Label('Escribamos números en mapuzugun!',style={'color': 'black', 'fontSize': 20}),
+    html.Label('Dime un número entre 1 y 9999',style={'color': '#8B008B', 'fontSize': 20, 'font-weight': 'bold'}),
 
     dcc.Input(id='my-id', value=1, type='text'),
     html.Div(id='my-div',style={'color': 'black', 'fontSize': 16}),#'font-weight': 'bold'
@@ -190,7 +190,8 @@ def update_output_div(input_value):
     if input_value < 1 or input_value > 9999:
         return 'Aún no podemos traducir números en ese rango :('
     else:
-        return 'En mapuzugun, el número "{}" se dice'.format(input_value)+' "'+map_esp(input_value)+'"'
+        #return 'En mapuzugun, el número "{}" se dice'.format(input_value)+' "'+map_esp(input_value)+'"'
+        return (html.P(['En mapuzugun, el número "{}" se dice'.format(input_value),html.Br(),html.Strong(map_esp(input_value), style={'color': '#8B008B', 'fontSize': 14})]))
 
 
 if __name__ == '__main__':
