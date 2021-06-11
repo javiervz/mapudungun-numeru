@@ -12,7 +12,7 @@ server = app.server
 
 app.layout = html.Div([
     html.Label('Dime un número entre 1 y 9999',style={'color': 'black', 'fontSize': 16}),
-    html.Label('y te enseñaré cómo se dice en mapudungun',style={'color': 'black', 'fontSize': 16}),
+    html.Label('y te mostraré cómo se dice en mapuzugun',style={'color': 'black', 'fontSize': 16}),
 
     dcc.Input(id='my-id', value=1, type='text'),
     html.Div(id='my-div',style={'color': 'black', 'fontSize': 16}),#'font-weight': 'bold'
@@ -20,8 +20,8 @@ app.layout = html.Div([
 
 ])
 
-numbers_1_9={'kiñe':1,'epu':2,'küla':3,'meli':4,'kechu':5,'kayu':6,'regle':7,'pura':8,'aylla':9}
-numbers_10_1000={'mari':10,'pataka':100,'warangka':1000}
+numbers_1_9={'kiñe':1,'epu':2,'kvla':3,'meli':4,'kecu':5,'kayu':6,'reqle':7,'pura':8,'ayja':9}
+numbers_10_1000={'mari':10,'pataka':100,'waragka':1000}
 
 def numbers_map_decimal(string):
 
@@ -55,7 +55,7 @@ def numbers_map_decimal(string):
             else:
                 s=s+100
         if 'warangka' in string:
-            warangka_index=string.index('warangka')
+            warangka_index=string.index('waragka')
             if string[warangka_index-1] in numbers_1_9:
                 s=s+numbers_1_9[string[warangka_index-1]]*1000
             else:
@@ -66,7 +66,7 @@ def numbers_map_decimal(string):
 # In[2]:
 
 
-words_1_10={1:'kiñe',2:'epu',3:'küla',4:'meli',5:'kechu',6:'kayu',7:'regle',8:'pura',9:'aylla',10:'mari'}
+words_1_10={1:'kiñe',2:'epu',3:'kvla',4:'meli',5:'kecu',6:'kayu',7:'reqle',8:'pura',9:'ayja',10:'mari'}
 def decimal_to_map_99(number):
     components=[int(i) for i in str(number)]
     if number<=10:
@@ -98,14 +98,14 @@ def decimal_to_map_9999(number):
     if number<1000:
         return decimal_to_map_999(number)
     elif number==1000:
-        return 'warangka'
+        return 'waragka'
     elif number%1000==0 and number>1000 and number<10000:
         return words_1_10[thousand]+' '+'pataka'
     else:
         if thousand==1:
-            return 'warangka'+' '+decimal_to_map_999(int(str(number)[1:]))
+            return 'waragka'+' '+decimal_to_map_999(int(str(number)[1:]))
         else:
-            return words_1_10[thousand]+' '+'warangka'+' '+decimal_to_map_999(int(str(number)[1:]))
+            return words_1_10[thousand]+' '+'waragka'+' '+decimal_to_map_999(int(str(number)[1:]))
 
 
 # In[3]:
